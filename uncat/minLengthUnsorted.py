@@ -1,5 +1,7 @@
+#re-check , something wrong
 def get_min_len_unsorted_sub_array(a):
     breaks = [i for i in range(0, len(a) - 1) if a[i] > a[i + 1]]
+    print(breaks)
     l = breaks[0]
     r = breaks[-1] + 1
     print(a[l], a[r])
