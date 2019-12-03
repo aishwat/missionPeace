@@ -11,7 +11,7 @@ def getMinPartitions(a):
         for i in range(0, len(a) - l):
             j = i + l
             if (a[i] == a[j]):
-                T[i][j] = T[i + 1][j - 1]
+                T[i][j] = T[i + 1][j - 1] 
             else:
                 T[i][j] = 99
                 for k in range(i, j):  # i inclusive, j exclusive

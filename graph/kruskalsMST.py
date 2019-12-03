@@ -24,7 +24,7 @@ class Graph:
             parent[y_root] = x_root
         else:
             parent[x_root] = y_root
-            y_root += 1
+            rank[y_root]+=1
 
     def kruskals(self):
         result = []
@@ -44,6 +44,8 @@ class Graph:
                 result.append(edge)
             i += 1
         self.printTree(result)
+
+        print(rank)
 
     def printTree(self, result):
         for (u, v, w) in result:

@@ -2,6 +2,7 @@ def getLongestSub(str):
     n = len(str)
     maxLen = 0
     for i in range(0, n - 1):
+        # print(i)
         l = i
         r = i + 1
         l_sum = 0

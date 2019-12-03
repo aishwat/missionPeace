@@ -1,5 +1,5 @@
 import math
-
+# https://ide.geeksforgeeks.org/LhGXEan4jR
 
 def getMinSquares(n):
     # T = [0] * n+1
