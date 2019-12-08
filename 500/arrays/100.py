@@ -7,6 +7,7 @@ import sys
 
 def getSmallestRange(arr):
     k = len(arr)
+    # element, list, index_in_list
     heap = [(arr[i][0], i, 0) for i in range(k)]
     heapq.heapify(heap)
     _min = min(heap)[0]

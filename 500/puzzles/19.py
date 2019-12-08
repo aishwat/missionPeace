@@ -17,6 +17,7 @@ def divide(N, D):
 
 divide(1001, 0011)
 
+
 # For instance if N=9 and D=3, then we have N=1001, D=11.
 # So the first thing to do is to left shift D by 2 so that the leading one matches that of N,
 # i.e. you work with D=1100

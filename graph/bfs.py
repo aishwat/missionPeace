@@ -43,7 +43,7 @@ g.addEdge(4, 5)
 g.addEdge(4, 6)
 g.addEdge(5, 6)
 g.addEdge(6, 6)
-# g.bfs(1)
+g.bfs(1)
 print("\n")
 
 visited = [False] * len(g.graph)

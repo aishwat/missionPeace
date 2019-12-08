@@ -13,7 +13,6 @@ def printAllSubArrays(a):
             _set.add(a[right])
             right += 1
         print(a[left:right])
-
         while right < n and a[right] in _set:
             _set.remove(a[left])
             left += 1
