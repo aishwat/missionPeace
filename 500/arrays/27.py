@@ -20,7 +20,7 @@ def getMax(a, k):
             leftWindow = left
 
     print(a[leftWindow: leftWindow + window + 1])
-    # print(a),
+    print(a),
 
 
 a = [1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0]

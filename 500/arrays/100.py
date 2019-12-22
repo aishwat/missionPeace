@@ -13,9 +13,10 @@ def getSmallestRange(arr):
     _min = min(heap)[0]
     _max = max(heap)[0]
     _range = _max - _min
+    print(heap)
     # print(_min, _max, _range)
     root = heapq.heappop(heap)
-
+    print(root)
     while True:
         # root = heapq.heappop(heap)
         try:
