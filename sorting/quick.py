@@ -48,7 +48,8 @@ def partition(a, l, r):
     return j + 1
 
 
+
 a = [10, 80, 30, 90, 40, 50, 70]
-# quick_sort(a, 0, len(a) - 1)
-quick_sort_iter(a, 0, len(a) - 1)
+quick_sort(a, 0, len(a) - 1)
+# quick_sort_iter(a, 0, len(a) - 1)
 print(a)

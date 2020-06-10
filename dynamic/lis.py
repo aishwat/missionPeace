@@ -28,15 +28,16 @@ def getLIS(a):
     tailTable[0] = a[0]
 
     for i in range(1, len(a)):
+        print(a[i], tailTable)
         if a[i] < tailTable[0]:
+            #never executed
             tailTable[0] = a[i]
         elif a[i] > tailTable[_len - 1]:
             tailTable[_len] = a[i]
             _len += 1
         else:
-            print(a[0:_len])
-            ceilIndex = getCeilIndex(a, -1, _len - 1, a[i])
-            print('ceil for ', a[i], ':', a[ceilIndex])
+            ceilIndex = getCeilIndex(tailTable, -1, _len - 1, a[i])
+            print('ceil for ', a[i],':', tailTable[ceilIndex])
             tailTable[ceilIndex] = a[i]
 
     print(_len)

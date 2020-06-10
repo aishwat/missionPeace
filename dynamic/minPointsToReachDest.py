@@ -31,7 +31,10 @@ def getMinPointsToReachDest(points):
         print(T[i][:])
 
 
-points = [[-2, -3, 3],
-          [-5, -10, 1],
-          [10, 30, -5]]
+# points = [[-2, -3, 3],
+#           [-5, -10, 1],
+#           [10, 30, -5]]
+points = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, -10]]
 getMinPointsToReachDest(points)

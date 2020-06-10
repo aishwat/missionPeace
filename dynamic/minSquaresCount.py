@@ -12,6 +12,7 @@ def getMinSquares(n):
             temp = j * j
 
             if temp < i:
+                # use temp as one factor
                 T[i] = min(T[i], 1 + T[i - temp])
 
     print(T)

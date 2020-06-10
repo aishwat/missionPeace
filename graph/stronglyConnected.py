@@ -20,7 +20,7 @@ class Graph:
         visited[u] = True
         print(u, end=" ")
         for v in self.g[u]:
-            if visited[v] == False:
+            if not visited[v]:
                 self.dfsUtil2(v, visited)
 
     def transpose(self):

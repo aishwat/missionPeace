@@ -72,7 +72,7 @@ def main():
     ptr = 2
     currNode = 1
 
-    s = "abcbab"
+    s = "abbc"
 
     for i in range(len(s)):
         tree.append(Node())
@@ -82,11 +82,15 @@ def main():
     print("-------------")
     print(ptr)
 
+    maxLen = 0
     for i in range(3, ptr + 1):
+        count = 0
         print(i, ")", end=" ")
         for j in range(tree[i].start, tree[i].end + 1):
+            count+=1
             print(s[j], end=" ")
-        print()
+        maxLen = max(maxLen, count)
+        print(maxLen)
 
 
 main()

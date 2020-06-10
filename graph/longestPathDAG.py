@@ -22,7 +22,7 @@ class Graph:
 
     def dfs(self, vertex, visited, stack):
         visited[vertex] = True
-
+        # print("----",list(self.graph[vertex].keys()))
         for adj in list(self.graph[vertex].keys()):
             if visited[adj] == False:
                 self.dfs(adj, visited, stack)

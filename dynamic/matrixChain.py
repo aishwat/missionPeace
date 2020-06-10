@@ -2,6 +2,9 @@ def getMinMulti(a):
     n = len(a)
     T = [[0 for i in range(n)] for i in range(n)]
 
+    # for i in range(n):
+    #     T[i][i] = a[i]
+
     for l in range(2, len(a)):
         for i in range(0, len(a) - l):
             j = i + l;

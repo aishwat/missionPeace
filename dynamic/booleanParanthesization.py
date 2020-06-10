@@ -12,9 +12,12 @@ def countParenth(symbols, operators):
             F[i][i] = 1
 
     for l in range(1, n):
+        # print("====",l,"=====")
         for i in range(0, n - l):
             j = i + l
+            # print("i",i, "j",j)
             for k in range(i, j):
+                # print(k, operators[k])
                 t_ik = T[i][k] + F[i][k]
                 t_kj = T[k + 1][j] + F[k + 1][j]
                 if operators[k] == '&':

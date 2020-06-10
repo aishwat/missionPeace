@@ -4,7 +4,7 @@ def get_element(a, i, exp):
 
 def count_sort(a, exp):
     c = [0] * (10)  # auxillary array
-    b = [0] * (len(a))  # b will have 1st element 0 always, to keep indexing clean
+    b = [0] * (len(a)+1)  # b will have 1st element 0 always, to keep indexing clean
 
     for i in range(0, len(a)):
         c[(a[i] // exp) % 10] += 1
@@ -13,7 +13,7 @@ def count_sort(a, exp):
 
     print(c)
     for i in range(len(a) - 1, -1, -1):
-        b[c[(a[i] // exp) % 10] - 1] = a[i]
+        b[c[(a[i] // exp) % 10] ] = a[i]
         c[(a[i] // exp) % 10] -= 1  # for duplicate elements
     return b
 
