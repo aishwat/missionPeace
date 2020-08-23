@@ -4,6 +4,7 @@ class TreeNode:
         self.left = None
         self.right = None
         self.sum = None
+        self.next = None
 
 
 class Tree:

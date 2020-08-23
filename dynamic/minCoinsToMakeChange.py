@@ -14,5 +14,14 @@ def getMinCount(coins, V):
 
 
 a = getMinCount([1, 5, 6, 9], 11)
+# coins = [2, 5, 10, 1]
+# amount = 27
+# coins = [1, 2147483647]
+# amount = 2
+# coins = [2]
+# amount = 3
+# coins = [1, 2]
+# amount = 2
+# a = getMinCount(coins, amount)
 for i in range(len(a)):
     print(a[i][:])

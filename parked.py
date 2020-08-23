@@ -1,0 +1,22 @@
+# 5. 331 - done
+
+# ====================================================================
+# Draw min/mix problems daily count and target
+# 212 - parked
+# 233 - parked, math based, find dp sol
+# 248 - parked, not a good prob, hard
+# 282 - parked
+# 289 - parked
+# 291 - parked
+# 301 - parked, partial problem is good, rest is dumb dfs
+# 302 - Smallest Rectangle Enclosing Black Pixels, come back later
+# 306 - Additive Number, dumb dfs
+# 308 - skipped, Range Sum Query 2D - Mutable, come back later
+# 312 - burst balloons - hard, skipped
+# 315 - parked, hard
+# 317 - parked, hard, dfs
+# 313 - super ugly, redo
+# 318 - redo with bit approach
+# 320 - skip, hard dfs
+# 621 - parked
+# ====================================================================

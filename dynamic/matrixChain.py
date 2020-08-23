@@ -14,10 +14,11 @@ def getMinMulti(a):
                 # print(i, " ", k, " ", j)
                 q = T[i][k] + T[k][j] + (a[i] * a[k] * a[j])
                 T[i][j] = min(q, T[i][j])
+                print(i, k, j)
 
     for i in range(len(T)):
         print(T[i][:])
 
 
-p = [1, 2, 3, 4]
+p = [1, 2, 3, 4, 5]
 getMinMulti(p)
