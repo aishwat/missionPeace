@@ -1,4 +1,7 @@
 class TreeNode:
+    def __str__(self):
+        return str(self.val) or 'None'
+
     def __init__(self, x):
         self.val = x
         self.left = None
