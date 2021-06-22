@@ -1,43 +1,89 @@
-def longestPalindrome(s: str) -> str:
-    n = len(s)
-    if n == 0:
-        return ""
-    if n == 1:
-        return s
+import flask, abort
+import yaml
 
-    T = [[1 for i in range(n)] for j in range(n)]
-
-    maxi = 0
-    maxL = 0
-    for i in range(n - 1):
-        if s[i] == s[i + 1]:
-            T[i][i + 1] = 2
-            maxi = i
-            maxL = 1
+app = flask.Flask(__name__)
+app.config["db"] = dict()
 
 
-    for l in range(2, n):
-        for i in range(0, n - l):
-            j = i + l
-            # print(i, j)
-
-            if s[i] == s[j] and T[i + 1][j - 1] == l - 1:
-                T[i][j] = T[i + 1][j - 1] + 2
-                maxi = i
-                maxL = max(maxL, l)
-            else:
-                T[i][j] = max(T[i + 1][j], T[i][j - 1])
-
-    print(s[maxi:maxi + maxL+1])
-    # print(maxL)
-
-    # for i in range(n):
-    #     for j in range(n):
-            # print(T[i][j], end=" ")
-        # print()
+@app.route("/service/configuration/<string:env>/<string:service_name>",
+           methods=["GET"])
+def get_service_configuration(env, service_name):
+    try:
+        config = app["db"][env][service_name]
+        return yaml.dump(config)
+    except e:
+        return abort(404, description="Configuration not found")
 
 
-longestPalindrome("abbcd")
+@app.route("/service/configuration/<string:env>/<string:service_name>",
+           methods=["POST"])
+def add_service_configuration(env, service_name):
+    data = flask.request.data
+    try:
+        config = yaml.load(data)
+        app["db"][env][service_name] = config
+        return "Successfully added new configuration"
+    except yaml.YAMLError as e:
+        return abort(400, description="Wrong YAML Format")
+    except:
+        return abort(500, description="Server Error")
+
+
+@app.route("/service/configuration/<string:env>/<string:service_name>",
+           methods=["DELETE"])
+def delete_service_configuration(env, service_name):
+    try:
+        config = app["db"][env][service_name]
+        del app["db"][env][service_name]
+        return "Successfully deleted configuration"
+    except e:
+        return abort(404, description="Configuration not found")
+
+
+if __name__ == "__main__":
+    app.run()
+
+
+# def longestPalindrome(s: str) -> str:
+#     n = len(s)
+#     if n == 0:
+#         return ""
+#     if n == 1:
+#         return s
+#
+#     T = [[1 for i in range(n)] for j in range(n)]
+#
+#     maxi = 0
+#     maxL = 0
+#     for i in range(n - 1):
+#         if s[i] == s[i + 1]:
+#             T[i][i + 1] = 2
+#             maxi = i
+#             maxL = 1
+#
+#
+#     for l in range(2, n):
+#         for i in range(0, n - l):
+#             j = i + l
+#             # print(i, j)
+#
+#             if s[i] == s[j] and T[i + 1][j - 1] == l - 1:
+#                 T[i][j] = T[i + 1][j - 1] + 2
+#                 maxi = i
+#                 maxL = max(maxL, l)
+#             else:
+#                 T[i][j] = max(T[i + 1][j], T[i][j - 1])
+#
+#     print(s[maxi:maxi + maxL+1])
+#     # print(maxL)
+#
+#     # for i in range(n):
+#     #     for j in range(n):
+#             # print(T[i][j], end=" ")
+#         # print()
+
+
+# longestPalindrome("abbcd")
 # import math
 # INF = math.inf
 #

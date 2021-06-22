@@ -14,22 +14,23 @@ import itertools
 from functools import cmp_to_key
 import itertools
 import random
+import hashlib
+from collections import Counter
+
+import math
+import os
+import random
+import re
+import sys
+
+
+# Find missing lowest positive number
+# LCA
 
 
 class Solution:
-    def maxAncestorDiff(self, root: TreeNode) -> int:
-        self.dfs(root, [], [])
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        
 
-    def dfs(self, root, path, res):
-
-        if not root.left and root.right:
-            print(path + [root.val])
-        if root.left:
-            self.dfs(root.left, path + [root.val], res)
-        if root.right:
-            self.dfs(root.right, path + [root.val], res)
-
-
-a = [8, 3, 10, 1, 6, None, 14, None, None, 4, 7, 13]
-tree = Tree(a)
-print(Solution().maxAncestorDiff(tree.root))
+tree = Tree([3, 5, 1, 6, 2, 0, 8, None, None, 7, 4])
+print(Solution().lowestCommonAncestor(tree, 5, 1))
