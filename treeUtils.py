@@ -24,6 +24,7 @@ class Tree:
         else:
             return  # TreeNode(None)
 
+    @classmethod
     def inorder(self, root):
         if not root:
             return
