@@ -15,15 +15,10 @@ class LinkedList:
             ptr.next = ListNode(num)
             ptr = ptr.next
         self.head = self.head.next
-        self.doRet()
 
-    def doRet(self):
-        return self.head
-
-    def print(self, head):
-        tmp = head
+    def print(self):
+        tmp = self.head
         while tmp:
             print(tmp.val, end=" ")
-
             tmp = tmp.next
         print()
